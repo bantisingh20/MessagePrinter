@@ -1,0 +1,95 @@
+<html>
+    <head>
+        <title>Message Printer</title>
+        <style>
+            body{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: rgb(240, 6, 170);
+            }
+
+            div{
+               box-shadow: 0px 9px 26px 0px black;
+               background-color: white;
+               padding: 3rem;
+               border-radius: 3%;
+               position: fixed;
+               gap: 10px;
+            }
+
+            h2{
+               margin: 10px;
+               font-size: 27px;
+               text-transform: capitalize;
+            }
+
+            input{
+                width: 100%;
+                padding: 5px 10px;
+                border: 2px solid rgba(0, 0, 0, 0.6);
+                font-size: 18px;
+                margin-bottom: 10px;
+            }
+
+            button{
+                margin-left:40%;
+                margin-top: 5px;
+                padding: 7px;
+                width: 6rem;
+                text-transform: capitalize;
+                font-size: medium;
+                font-weight: bold;
+                background-color: rgb(219, 51, 253);
+                box-shadow: 0px 4px 16px 0px black;
+                border-radius: 5%;
+            }
+
+            p{
+                text-align: center;
+                text-transform: capitalize;
+                font-weight: bold;
+                font-size: large;
+            }
+
+            h3{
+                /* display: none;  */
+                text-align: center;
+                text-transform: capitalize;
+                font-weight: bold;
+                font-size: large;
+            }
+        </style>
+
+        <body>
+            <div>
+                <h2>A Message you would like to pass..!</h2>
+                <input type="text" name="msg" required="" placeholder="  "><br>
+                <button onclick="msg()">submit</button><br><br>
+               
+                <p id="error"></p>
+                <p>last Message delivered...!</p>
+                <p id="output"></p>
+                <p id="his"></p>
+            </div>
+
+            <script>
+                function msg(){
+                const ms=document.getElementsByName('msg')[0].value;
+                const error=document.getElementById('error');
+
+                if(ms===""||ms===null){
+                    console.log("hello");
+                    document.getElementById('error').innerHTML="Enter proper Message..!";
+                    document.getElementById('output').innerHTML=ms;
+
+                }else{
+                    document.getElementById('output').innerHTML=ms;
+                    document.getElementById('error').innerHTML=" ";
+
+                }
+            }
+            </script>
+        </body>
+    </head>
+</html>
